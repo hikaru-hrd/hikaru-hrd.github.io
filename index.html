@@ -107,6 +107,33 @@ I'm from Japan🎌
 00000000000000 / 00000000000000000000000
 00000000000000 / 00000000000000000000000
 <pre>
+
+// Function to change website background color
+function changeColor(color) {
+    document.body.style.backgroundColor = color;
+}
+
+// Set default background color to light blue on page load
+document.addEventListener("DOMContentLoaded", function () {
+    document.body.style.backgroundColor = "lightblue";
+
+    let colorPicker = document.createElement("select");
+    colorPicker.innerHTML = `
+        <option value="lightblue">Light Blue (Default)</option>
+        <option value="white">White</option>
+        <option value="lightgray">Light Gray</option>
+        <option value="black">Black</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="red">Red</option>
+    `;
+
+    colorPicker.addEventListener("change", function () {
+        changeColor(this.value);
+    });
+
+    document.body.appendChild(colorPicker);
+});
 <!-- partial -->
   <script  src="./script.js"></script>
 
